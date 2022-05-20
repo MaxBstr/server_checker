@@ -1,0 +1,19 @@
+{% load static %}
+
+<nav>
+    <div>
+        <img src="{% static 'img/header_logo.png' %}" alt="logo">
+        {% if user.is_authenticated %}
+            <button> Выйти </button>
+        {% endif %}
+    </div>
+    {% if user.is_authenticated %}
+        <div>
+            <a href={% url 'servers:index' %}> Главная </a>
+            <div>
+                <a href={% url 'servers:profile' %}> Личный кабинет </a>
+                <p> Добро пожаловать, {{ user.username }}</p>
+            </div>
+        </div>
+    {% endif %}
+</nav>

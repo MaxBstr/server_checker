@@ -1,0 +1,2 @@
+celery: celery -A server_checker worker --pool=solo -l info
+beat: celery -A server_checker beat -l info

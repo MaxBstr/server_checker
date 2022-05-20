@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div>
+        <p>Мониторинг состояния серверов</p>
+    </div>
+    {% if user.is_superuser %}
+        <p>Добавить что-то</p>
+    {% endif %}
+    {% include 'includes/table.html' %}
+{% endblock %}
