@@ -1,11 +1,23 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <div>
-        <p>Мониторинг состояния серверов</p>
+    <div class="index__label">
+        Мониторинг состояния серверов
     </div>
-    {% if user.is_superuser %}
-        <p>Добавить что-то</p>
-    {% endif %}
     {% include 'includes/table.html' %}
+    {% if user.is_superuser %}
+        <div class="table__form">
+            <div class="table__add_server__label"> Добавить сервер </div>
+            <div class="table__add_server">
+                <form action="{% url 'servers:server' %}" method="post">
+                    {% csrf_token %}
+                    <label class="server_form__label" for="{{ context.form.ip.id_for_label }}"> IP </label>
+                    {{ context.form.ip }}<br>
+                    <label class="server_form__label" for="{{ context.form.name.id_for_label }}"> name </label>
+                    {{ context.form.name }}<br>
+                    <input class="server_form__input" type="submit" value="Отправить">
+                </form>
+            </div>
+        </div>
+    {% endif %}
 {% endblock %}

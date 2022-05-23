@@ -1,19 +1,19 @@
 {% load static %}
 
-<nav>
-    <div>
-        <img src="{% static 'img/header_logo.png' %}" alt="logo">
+<div class="header">
+    <div class="header__header">
+        <img class="logo" src="{% static 'img/header_logo.png' %}" alt="logo">
         {% if user.is_authenticated %}
-            <button> Выйти </button>
+            <a class="logout_btn" href="{% url 'servers:logout' %}"> Выйти </a>
         {% endif %}
     </div>
     {% if user.is_authenticated %}
-        <div>
-            <a href={% url 'servers:index' %}> Главная </a>
-            <div>
-                <a href={% url 'servers:profile' %}> Личный кабинет </a>
-                <p> Добро пожаловать, {{ user.username }}</p>
+        <div class="header__body">
+            <a class="main_page__link" href={% url 'servers:index' %}> Главная </a>
+            <div class="profile">
+                <a class="profile__link"href={% url 'servers:profile' %}> Личный кабинет </a>
+                <div class="profile__name"> Добро пожаловать, {{ user.username }}</div>
             </div>
         </div>
     {% endif %}
-</nav>
+</div>

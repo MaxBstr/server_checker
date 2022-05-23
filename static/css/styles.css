@@ -1,3 +1,163 @@
-h1 {
-    color: red;
+/* header */
+.header__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logout_btn {
+    border: 1px solid lightgray;
+    color: black;
+    padding: 5px 30px;
+    background-color: lightgray;
+    text-decoration: none;
+    margin-right: 50px;
+}
+
+.header__body {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: coral;
+}
+
+.profile {
+    display: flex;
+    align-items: center;
+    height: 50px;
+}
+
+.main_page__link {
+    border: 1px solid black;
+    color: white;
+    padding: 5px 30px;
+    text-decoration: none;
+    margin-left: 10px;
+}
+
+.profile__link {
+    border: 1px solid black;
+    color: white;
+    padding: 5px 10px;
+    text-decoration: none;
+    margin-right: 20px;
+}
+
+.profile__name {
+    color: white;
+    margin-right: 50px;
+}
+
+/* footer */
+.footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: black;
+    background-color: coral;
+    height: 50px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+/* index */
+.index__label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    margin-top: 30px;
+    margin-bottom: 40px;
+}
+
+/* profile */
+.profile__page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 40px 30% 0;
+}
+
+.profile__item {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    border: 1px solid gray;
+    border-radius: 10px;
+    width: 300px;
+    margin-bottom: 20px;
+    height: 50px;
+    background-color: darksalmon;
+    color: white;
+}
+
+.item__label {
+    margin-right: 40px;
+    margin-left: 10px;
+    width: 60px;
+}
+
+.profile__edit_link {
+    border: 1px solid black;
+    color: black;
+    padding: 5px 10px;
+    text-decoration: none;
+    margin-top: 50px;
+}
+
+/* table */
+.table__content {
+    border-collapse: collapse;
+    border: 3px solid #F79361;
+    font-family: "Lucida Grande", sans-serif;
+}
+
+.table__header {
+    width: 200px;
+    padding: 10px 15px;
+    text-align: center;
+}
+
+.table__cell {
+    width: 200px;
+    padding: 10px 15px;
+    text-align: center;
+}
+
+.table__row:nth-child(2n) {
+    background: #E5E5E5;
+}
+
+.table__form {
+    background-color: coral;
+    width: 300px;
+    height: 180px;
+    border-radius: 20px;
+    margin: 0 auto;
+    font-family: "Lucida Grande", sans-serif;
+}
+
+.table__add_server__label {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    padding-top: 10px;
+    margin-top: 50px;
+}
+
+.table__add_server {
+    display: flex;
+    justify-content: center;
+}
+
+.server_form__label {
+    margin-right: 20px;
+    width: 40px;
+    margin-bottom: 10px;
+}
+
+.server_form__input {
+    margin-top: 10px;
 }

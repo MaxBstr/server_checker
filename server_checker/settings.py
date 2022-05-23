@@ -1,5 +1,6 @@
 from pathlib import Path
 
+from django.urls import reverse
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-_=iut*&9i-o1)5-q_%wg*wd!akbe(2h06$zwr$f1*cl^d1$0d#'

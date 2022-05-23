@@ -1,9 +1,6 @@
 import platform
 import subprocess
 
-from django.shortcuts import redirect
-from django.urls import reverse
-
 from server_checker.celery import app
 from servers.models import Server
 
@@ -25,6 +22,3 @@ def check_connection() -> None:
         status = True if status == 0 else False
         server.status = status
         server.save()
-
-    # TODO: check
-    return redirect(reverse('servers:index'))

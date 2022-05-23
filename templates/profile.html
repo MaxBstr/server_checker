@@ -3,13 +3,31 @@
 {% block title %} Личный кабинет {% endblock %}
 
 {% block content %}
-    <div>
-        <p>{{ user.first_name }}</p>
-        <p>{{ user.middle_name }}</p>
-        <p>{{ user.last_name }}</p>
-        <p>{{ user.work_position }}</p>
-        <p>{{ user.email }}</p>
+    <div class="profile__page">
+        <div class="profile__item">
+            <div class="item__label">Фамилия:</div>
+            <div class="item__content">{{ user.last_name }}</div>
+        </div>
+        <div class="profile__item">
+            <div class="item__label">Имя:</div>
+            <div class="item__content">{{ user.first_name }}</div>
+        </div>
+        <div class="profile__item">
+            <div class="item__label">Отчество:</div>
+            <div class="item__content">{{ user.middle_name }}</div>
+        </div>
+
+        <div class="profile__item">
+            <div class="item__label">Должность:</div>
+            <div class="item__content">{{ user.work_position }}</div>
+        </div>
+
+        <div class="profile__item">
+            <div class="item__label">Почта:</div>
+            <div class="item__content">{{ user.email }}</div>
+        </div>
+
+        <a class="profile__edit_link" href="{% url 'servers:edit_profile' %}"> Изменить данные </a>
     </div>
-    <a href="{% url 'servers:edit_profile' %}"> Изменить данные </a>
 
 {% endblock %}
