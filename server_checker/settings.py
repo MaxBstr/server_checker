@@ -23,7 +23,8 @@ THIRD_PARTY_APPS = [
     'rest_framework'
 ]
 PROJECT_APPS = [
-    'servers'
+    'servers',
+    'users'
 ]
 
 INSTALLED_APPS = DJANGO_STUFF + THIRD_PARTY_APPS + PROJECT_APPS
@@ -102,8 +103,6 @@ STATICFILES_DIRS = [
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-AUTH_USER_MODEL = 'servers.UserProfile'
-
 # CELERY stuff
 REDIS_HOST = 'localhost'
 REDIS_PORT = '6379'
@@ -113,3 +112,9 @@ CELERY_ACCEPT_CONTENT = ['application/json']
 CELERY_TASK_SERIALIZER = 'json'
 CELERY_RESULT_SERIALIZER = 'json'
 CELERY_TIMEZONE = 'Asia/Shanghai'
+
+AUTH_USER_MODEL = 'users.UserProfile'
+
+# Redirect conf
+LOGIN_REDIRECT_URL = '/'
+# LOGOUT_REDIRECT_URL = '/'

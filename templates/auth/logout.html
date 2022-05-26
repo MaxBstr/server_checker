@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% block title %} Выход {% endblock %}
+
+{% block content %}
+    <div class="logout__page">
+        <h1>Будем рады увидеть вас снова</h1>
+        <a href="{% url 'servers:index' %}"> На главную </a>
+    </div>
+{% endblock %}

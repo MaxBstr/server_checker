@@ -1,18 +1,9 @@
 import re
 
 from django import forms
-from django.contrib.auth.forms import UserCreationForm
 from django.core.exceptions import ValidationError
 
-from servers.models import UserProfile, Server
-
-
-class UserProfileUpdateForm(forms.ModelForm):
-    email = forms.EmailField()
-
-    class Meta:
-        model = UserProfile
-        fields = ['first_name', 'middle_name', 'last_name', 'work_position', 'email', 'username']
+from servers.models import Server
 
 
 class ServerCreateOrUpdateForm(forms.ModelForm):
@@ -30,9 +21,3 @@ class ServerCreateOrUpdateForm(forms.ModelForm):
         if not re.match(pattern[:-1], ip):
             raise ValidationError("ip format is incorrect")
         return ip
-
-
-class UserCreateForm(UserCreationForm):
-    class Meta(UserCreationForm.Meta):
-        model = UserProfile
-        fields = ('first_name', 'middle_name', 'last_name', 'work_position', 'username', 'email')

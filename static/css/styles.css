@@ -1,3 +1,7 @@
+body {
+    font-family: "Lucida Grande", sans-serif;
+}
+
 /* header */
 .header__header {
     display: flex;
@@ -6,12 +10,20 @@
 }
 
 .logout_btn {
-    border: 1px solid lightgray;
+    border: 1px solid black;
     color: black;
     padding: 5px 30px;
     background-color: lightgray;
     text-decoration: none;
     margin-right: 50px;
+    border-radius: 20px;
+
+    transition: background-color .3s linear, color .3s linear;
+}
+
+.logout_btn:hover {
+    background-color: black;
+    color: white;
 }
 
 .header__body {
@@ -48,6 +60,18 @@
     margin-right: 50px;
 }
 
+.header__btn {
+    text-decoration: none;
+    border-radius: 15px;
+
+    transition: background-color .3s linear, color .3s linear;
+}
+
+.header__btn:hover {
+    background-color: black;
+    color: coral;
+}
+
 /* footer */
 .footer {
     display: flex;
@@ -55,9 +79,10 @@
     justify-content: center;
     color: black;
     background-color: coral;
-    height: 50px;
+    height: 80px;
     position: absolute;
     bottom: 0;
+    left: 0;
     width: 100%;
 }
 
@@ -66,9 +91,9 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 24px;
+    font-size: 30px;
     margin-top: 30px;
-    margin-bottom: 40px;
+    margin-bottom: 20px;
 }
 
 /* profile */
@@ -90,38 +115,48 @@
     margin-bottom: 20px;
     height: 50px;
     background-color: darksalmon;
-    color: white;
+    color: black;
 }
 
 .item__label {
-    margin-right: 40px;
+    margin-right: 60px;
     margin-left: 10px;
     width: 60px;
+    font-style: italic;
+    font-size: 18px;
 }
 
 .profile__edit_link {
     border: 1px solid black;
     color: black;
-    padding: 5px 10px;
+    padding: 15px 15px;
     text-decoration: none;
-    margin-top: 50px;
+    margin-top: 30px;
+    border-radius: 20px;
+    font-size: 20px;
+
+    transition: background-color .3s linear, color .3s linear;
+}
+
+.profile__edit_link:hover {
+    background-color: black;
+    color: white;
 }
 
 /* table */
 .table__content {
     border-collapse: collapse;
     border: 3px solid #F79361;
-    font-family: "Lucida Grande", sans-serif;
 }
 
 .table__header {
-    width: 200px;
+    width: 250px;
     padding: 10px 15px;
     text-align: center;
 }
 
 .table__cell {
-    width: 200px;
+    width: 250px;
     padding: 10px 15px;
     text-align: center;
 }
@@ -130,13 +165,15 @@
     background: #E5E5E5;
 }
 
+/* table add server form */
 .table__form {
     background-color: coral;
     width: 300px;
-    height: 180px;
+    height: 200px;
     border-radius: 20px;
     margin: 0 auto;
-    font-family: "Lucida Grande", sans-serif;
+    margin-bottom: 30px;
+    margin-top: 20px;
 }
 
 .table__add_server__label {
@@ -145,6 +182,8 @@
     margin-bottom: 20px;
     padding-top: 10px;
     margin-top: 50px;
+    font-weight: bold;
+    font-size: 20px;
 }
 
 .table__add_server {
@@ -156,8 +195,162 @@
     margin-right: 20px;
     width: 40px;
     margin-bottom: 10px;
+    font-weight: normal;
+    font-size: 18px;
 }
 
 .server_form__input {
-    margin-top: 10px;
+    margin-top: 15px;
+}
+
+/* Login form */
+.login__form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 400px;
+    margin: 0 auto;
+    background-color: darksalmon;
+    border: 2px solid black;
+    border-radius: 20px;
+    height: 300px;
+    margin-top: 15%;
+}
+
+.login__label {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.login_form__label {
+    width: 100px;
+    margin-bottom: 10px;
+    margin-left: auto;
+    font-size: 24px;
+}
+
+.login__buttons {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.login__btn {
+    border-radius: 15px;
+    border: 2px solid black;
+    height: 40px;
+    background-color: darkkhaki;
+    color: black;
+    font-weight: bold;
+    font-size: 18px;
+    margin-right: 10px;
+
+    transition: background-color .3s linear, color .3s ease;
+}
+
+.login__btn:hover {
+    background-color: black;
+    color: white;
+
+}
+
+.login_signup__btn {
+    display: flex;
+    align-items: center;
+    border: 2px solid black;
+    border-radius: 15px;
+    text-decoration: none;
+    height: 40px;
+    padding: 0 10px;
+    color: black;
+    font-weight: bold;
+    font-size: 18px;
+    background-color: lightskyblue;
+
+    transition: background-color .3s linear, color .3s ease;
+}
+
+.login_signup__btn:hover {
+    background-color: black;
+    color: white;
+}
+
+/* logout page */
+.logout__page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.logout__page h1 {
+    margin-top: 20%;
+    font-size: 48px;
+}
+
+.logout__page a {
+    text-decoration: none;
+    margin-top: 30px;
+    font-size: 32px;
+    border: 2px solid black;
+    color: black;
+    background-color: coral;
+    padding: 10px 20px;
+    border-radius: 20px;
+
+    transition: background-color .3s linear, color .3s ease;
+}
+
+.logout__page a:hover {
+    background-color: black;
+    color: white;
+}
+
+/* signup form */
+.signup_form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 0 auto;
+}
+
+.signup_form__label {
+    font-size: 48px;
+    margin-top: 50px;
+    margin-bottom: 40px;
+}
+
+.signup_form__data {
+    display: flex;
+    flex-direction: row;
+}
+
+.signup_form__field_label {
+    margin-bottom: 30px;
+    width: 200px;
+    font-size: 20px;
+}
+
+.signup_btn__block {
+    display: flex;
+    justify-content: center;
+}
+
+.signup_btn {
+    border: 2px solid black;
+    color: black;
+    padding: 15px 15px;
+    font-size: 18px;
+    border-radius: 15px;
+    font-weight: bold;
+
+    transition: background-color .3s linear, color .3s ease;
+}
+
+.signup_btn:hover {
+    background-color: black;
+    color: white;
 }

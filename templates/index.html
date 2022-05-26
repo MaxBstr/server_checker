@@ -4,7 +4,6 @@
     <div class="index__label">
         Мониторинг состояния серверов
     </div>
-    {% include 'includes/table.html' %}
     {% if user.is_superuser %}
         <div class="table__form">
             <div class="table__add_server__label"> Добавить сервер </div>
@@ -20,4 +19,5 @@
             </div>
         </div>
     {% endif %}
+    {% include 'includes/table.html' %}
 {% endblock %}

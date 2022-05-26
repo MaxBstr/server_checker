@@ -1,10 +1,9 @@
 {% extends 'base.html' %}
-
-{% block title %} Изменение данных личного кабинета {% endblock %}
+{% block title %} Регистрация {% endblock %}
 
 {% block content %}
     <div class="signup_form">
-        <h2 class="signup_form__label">Изменить данные</h2>
+        <h2 class="signup_form__label">Создать аккаунт</h2>
         <form method="post">
             {% csrf_token %}
             {% for field in form %}
@@ -17,7 +16,7 @@
                 </div>
             {% endfor %}
             <div class="signup_btn__block">
-                <button class="signup_btn" type="submit">Сохранить</button>
+                <button class="signup_btn" type="submit">Зарегистрироваться</button>
             </div>
         </form>
     </div>

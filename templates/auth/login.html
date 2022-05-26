@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block title %} Вход в аккаунт {% endblock %}
+
+{% block content %}
+    <div class="login__form">
+        <div class="login__label">Войти</div>
+        <form method="post">
+            {% csrf_token %}
+            <label class="login_form__label" for="{{ form.username.id_for_label }}"> Почта: </label>
+            {{ form.username }}<br>
+            <label class="login_form__label" for="{{ form.password.id_for_label }}"> Пароль: </label>
+            {{ form.password }}<br>
+            <div class="login__buttons">
+                <button class="login__btn" type="submit">Залогиниться</button>
+                <a class="login_signup__btn" href="{% url 'users:signup' %}">Создать аккаунт</a>
+            </div>
+        </form>
+    </div>
+{% endblock %}
