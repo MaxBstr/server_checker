@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block title %} Добавление сервера {% endblock %}
+
+{% block content %}
+        <div class="table__form">
+            <div class="table__add_server__label"> Добавить сервер </div>
+            <div class="table__add_server">
+                <form action="" method="post">
+                    {% csrf_token %}
+                    <label class="server_form__label" for="{{ form.ip.id_for_label }}"> IP </label>
+                    {{ form.ip }}<br>
+                    <label class="server_form__label" for="{{ form.name.id_for_label }}"> name </label>
+                    {{ form.name }}<br>
+                    <input class="server_form__input" type="submit" value="Отправить">
+                </form>
+            </div>
+        </div>
+{% endblock %}
