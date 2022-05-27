@@ -22,7 +22,6 @@ def load_context():
                 'status': server.status
             }
             context['servers'].append(server_data)
-    context['form'] = ServerCreateOrUpdateForm()
     return context
 
 
@@ -41,4 +40,7 @@ def add_server(request):
         server = form.save(commit=False)
         server.status = False
         server.save()
-    return redirect(reverse('servers:index'))
+        return redirect(reverse('servers:index'))
+
+    form = ServerCreateOrUpdateForm()
+    return render(request, 'add_server_page.html', {'form': form})

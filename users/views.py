@@ -31,7 +31,7 @@ def edit_profile(request: HttpRequest):
     if request.method == 'POST':
         if form.is_valid():
             form.save()
-        return redirect(reverse('servers:profile'))
+        return redirect(reverse('users:profile'))
 
     form = UserProfileUpdateForm()
     return render(request, 'edit_profile.html', {'form': form})

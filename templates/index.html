@@ -2,22 +2,12 @@
 
 {% block content %}
     <div class="index__label">
-        Мониторинг состояния серверов
+        <p>Мониторинг состояния серверов</p>
+        {% if user.is_superuser %}
+            <a class="add_server__link" href="{% url 'servers:server' %}"> Добавить сервер </a>
+        {% endif %}
     </div>
-    {% if user.is_superuser %}
-        <div class="table__form">
-            <div class="table__add_server__label"> Добавить сервер </div>
-            <div class="table__add_server">
-                <form action="{% url 'servers:server' %}" method="post">
-                    {% csrf_token %}
-                    <label class="server_form__label" for="{{ context.form.ip.id_for_label }}"> IP </label>
-                    {{ context.form.ip }}<br>
-                    <label class="server_form__label" for="{{ context.form.name.id_for_label }}"> name </label>
-                    {{ context.form.name }}<br>
-                    <input class="server_form__input" type="submit" value="Отправить">
-                </form>
-            </div>
-        </div>
-    {% endif %}
+
+
     {% include 'includes/table.html' %}
 {% endblock %}

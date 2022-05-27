@@ -7,7 +7,7 @@ from servers.models import Server
 
 
 class ServerCreateOrUpdateForm(forms.ModelForm):
-    ip = forms.CharField(max_length=15)
+    ip = forms.CharField(max_length=20)
 
     class Meta:
         model = Server
@@ -15,9 +15,8 @@ class ServerCreateOrUpdateForm(forms.ModelForm):
 
     def clean_ip(self):
         ip = self.cleaned_data['ip']
-        digit_pattern = r'\d{1,3}.'
-        pattern: str = digit_pattern * 4
+        ip_pattern = r'\d{1,3}.\d{1,3}.\d{1,3}.\d{1,3}'
 
-        if not re.match(pattern[:-1], ip):
+        if not re.match(ip_pattern, ip):
             raise ValidationError("ip format is incorrect")
         return ip
